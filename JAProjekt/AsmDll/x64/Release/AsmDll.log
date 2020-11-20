@@ -1,0 +1,4 @@
+﻿  Assembling AsmDll.asm...
+     Trwa tworzenie biblioteki C:\Users\bluep\source\repos\JAProjekt\x64\Release\AsmDll.lib i obiektu C:\Users\bluep\source\repos\JAProjekt\x64\Release\AsmDll.exp
+  LINK : określono opcję /LTCG, lecz generowanie kodu nie było wymagane; usuń opcję /LTCG z wiersza polecenia konsolidatora w celu podwyższenia wydajności konsolidatora
+  AsmDll.vcxproj -> C:\Users\bluep\source\repos\JAProjekt\x64\Release\AsmDll.dll

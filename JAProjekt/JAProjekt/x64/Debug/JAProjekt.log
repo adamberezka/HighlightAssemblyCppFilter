@@ -1,0 +1,13 @@
+﻿  JAProjekt.cpp
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\JAProjekt.cpp(9,10): warning C4067: nieoczekiwane tokeny występujące po dyrektywie preprocesora - oczekiwano nowego wiersza
+  func.cpp
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\JAProjekt.cpp(222,15): warning C4244: "inicjowanie": konwersja z "_Rep" do "int", możliwa utrata danych
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\JAProjekt.cpp(222,15): warning C4244:         with
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\JAProjekt.cpp(222,15): warning C4244:         [
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\JAProjekt.cpp(222,15): warning C4244:             _Rep=__int64
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\JAProjekt.cpp(222,15): warning C4244:         ]
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\func.cpp(57,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Generowanie kodu...
+C:\Users\bluep\source\repos\JAProjekt\JAProjekt\func.cpp(58,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  JAProjekt.vcxproj -> C:\Users\bluep\source\repos\JAProjekt\x64\Debug\JAProjekt.exe
+  0 File(s) copied
