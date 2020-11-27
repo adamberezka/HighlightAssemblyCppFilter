@@ -100,57 +100,38 @@ loopHeight:
 		;vzeroall ; zerowanie rejstrów
 		vxorps ymm0, ymm0, ymm0 
 
-		;main instructions
-
-		sub r12, 3
-		sub r13, 3
-		sub r14, 3
+		;g³ówne instrukcje
 
 		;pobranie danych
-		movdqu xmm1, [r12]
-		movdqu xmm3, [r13]
-		movdqu xmm6, [r14]
+		movdqu xmm1, [r12 - 3]
+		movdqu xmm3, [r13 - 3]
+		movdqu xmm6, [r14 - 3]
 
 		vinserti128 ymm1, ymm1, xmm1, 1
 		vinserti128 ymm3, ymm3, xmm3, 1
 		vinserti128 ymm6, ymm6, xmm6, 1
 
-		add r12, 16
-		add r13, 16
-		add r14, 16
+		movdqu xmm1, [r12 + 13]
+		movdqu xmm3, [r13 + 13]
+		movdqu xmm6, [r13 + 13]
 
-		movdqu xmm1, [r12]
-		movdqu xmm3, [r13]
-		movdqu xmm6, [r13]
-
-		sub r13, 13
 		movdqu xmm4, [r13]
 		vinserti128 ymm4, ymm4 , xmm4, 1
-		add r13, 16
-		movdqu xmm4, [r13]
+		movdqu xmm4, [r13 + 16]
 
-		sub r13, 13
-		sub r12, 10
-		sub r14, 10
-
-		movdqu xmm2, [r12]
-		movdqu xmm5, [r13]
-		movdqu xmm7, [r14]
+		movdqu xmm2, [r12 + 3]
+		movdqu xmm5, [r13 + 3]
+		movdqu xmm7, [r14 + 3]
 
 		vinserti128 ymm2, ymm2, xmm2, 1
 		vinserti128 ymm5, ymm5, xmm5, 1
 		vinserti128 ymm7, ymm7, xmm7, 1
 
-		add r12, 16
-		add r13, 16
-		add r14, 16
-
-		movdqu xmm2, [r12]
-		movdqu xmm5, [r13]
-		movdqu xmm7, [r14]
+		movdqu xmm2, [r12 + 19]
+		movdqu xmm5, [r13 + 19]
+		movdqu xmm7, [r14 + 19]
 
 		;rozpakowanie danych
-		;VPUNPCK-L/H-BW
 		vpunpcklbw ymm8, ymm1, ymm0
 		vpunpcklbw ymm9, ymm2, ymm0
 		vpunpcklbw ymm10, ymm3, ymm0
@@ -168,9 +149,6 @@ loopHeight:
 		vpunpckhbw ymm7, ymm7, ymm0
 
 		;operacje arytmetyczne
-		;vpaddsw
-		;vpsubsw
-
 		vpaddsw ymm4, ymm4, ymm1
 		vpaddsw ymm4, ymm4, ymm3
 		vpaddsw ymm4, ymm4, ymm6
@@ -189,17 +167,15 @@ loopHeight:
 		vpackuswb ymm0, ymm11, ymm4
 
 		;zapis danych
-		
 		vextracti128 xmm15, ymm0, 1
 		vmovups [r15], xmm15
-		add r15, 16
-		vmovups [r15], xmm0
+		vmovups [r15 + 16], xmm0
 		
-		;przesuniêcie wskaŸników
-		add r12, 11
-		add r13, 11
-		add r14, 11
-		add r15, 14
+		;przesuniêcie wskaŸników o 10 pikseli
+		add r12, 30
+		add r13, 30
+		add r14, 30
+		add r15, 30
 
 		inc r9
 		jmp loopWidth
@@ -207,7 +183,7 @@ loopHeight:
 	widthExit:
 
 	inc r8
-	;pointer incremetn
+	;przesuniêcie wskaŸników do pocz¹tku nastêpnej linii
 	mov eax, increment
 	mov r10d, start
 	add r8,r10
