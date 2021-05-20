@@ -1,4 +1,4 @@
-# Simple Assembler WinApi project filtering BMP images using with a highlighting filter.
+# Simple Assembler WinApi project filtering BMP images with a highlighting filter.
 Projcet includes:
 * implementation in C++ and MASM as DLLs
 * multi-threading with ability to choose number of threads
